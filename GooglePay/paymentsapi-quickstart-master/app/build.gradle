@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "26.0.3"
+    defaultConfig {
+        applicationId "com.firstdata.firstapi.googlepaysampleapp"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt')//, 'proguard-rules.pro'
+
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.gms:play-services-wallet:18.0.0'
+    implementation 'com.google.android.gms:play-services-tasks:17.0.2'
+    implementation 'com.google.android.gms:play-services-base:17.2.1'
+    implementation 'com.google.android.gms:play-services-basement:17.2.1'
+    implementation 'com.android.volley:volley:1.1.1'
+}
